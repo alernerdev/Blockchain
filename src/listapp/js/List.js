@@ -2,76 +2,33 @@ import React from 'react';
 
 export default class List extends React.Component {
 	state = {
-		items: [],
-		item: '',
+		data: ''
 	};
 
-	onItemChange = (e) => {
+	onDataChange = (e) => {
 		this.setState({
-			item: e.target.value,
-		});
-	};
-
-	addItem = (e) => {
-		e.preventDefault();
-
-		this.setState({
-			items: this.state.items.concat(
-				this.state.item
-			),
-			item: '',
+			data: e.target.value,
 		});
 	};
 
 	render() {
-		const submitDisabled = !this.state.item;
 		return(
 			<div className='ui text container' id='list'>
-			<table className='ui selectable structured large table'>
-				<thead>
-					<tr>
-						<th>Items</th>
-					</tr>
-				</thead>
-				<tbody>
-				{
-					this.state.items.map((item, idx) => (
-						<tr
-							key={idx}
-						>
-							<td>{item}</td>
-						</tr>
-					))
-				}
-				</tbody>
-				<tfoot>
-					<tr>
-						<th>
-							<form
-								className='ui form'
-								onSubmit={this.addItem}
-							>
+								<div className='ui input focus'>
+									<textarea
+										placeholder='Enter data here...'
+										value={this.state.item}
+										onChange={this.onDataChange}
+									/>
+								</div>
 								<div className='field'>
 									<input
 										className='prompt'
 										type='text'
-										placeholder='Add item...'
-										value={this.state.item}
-										onChange={this.onItemChange}
+										placeholder='... and it gets hashed here'
+										disabled
 									/>
 								</div>
-								<button
-									className='ui button'
-									type='submit'
-									disabled={submitDisabled}
-								>
-									Add item
-								</button>
-							</form>
-						</th>
-					</tr>
-				</tfoot>
-			</table>
 		</div>
     ); // end of return
   }
