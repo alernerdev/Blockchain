@@ -35,9 +35,9 @@ export default {
 	entry: {
         mainapp: './mainapp/index.js',
         votingapp: './votingapp/index.js',
-		listapp: './listapp/index.js',
+		hashapp: './hashapp/index.js',
 		basicroutingapp: './basicrouting/index.js',
-        vendor: ['react', 'react-dom', 'react-router-dom']
+        vendor: ['react', 'react-dom', 'react-router-dom', 'semantic-ui-react']
     },
 	target: 'web',
 	output: {
@@ -78,11 +78,11 @@ export default {
 			trackJSToken: '21981c7d5c924151bc538a66e95cfc22'
 			/* when injecting scripts into the head, the body is not ready yet, and trying to do GetElementById doesnt work */
 		}),
-		// list app
+		// hash app
 		new HtmlWebpackPlugin({
-			template: 'templates/listapp.ejs',
-			filename: 'listapp.html',
-			chunks: ['vendor', 'listapp', 'common'],
+			template: 'templates/hashapp.ejs',
+			filename: 'hashapp.html',
+			chunks: ['vendor', 'hashapp', 'common'],
 			favicon: 'favicon.ico',
 			minify: minifyOptions,
 			inject: 'body',

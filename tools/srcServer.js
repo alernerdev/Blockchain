@@ -9,10 +9,6 @@ import config from '../webpack.config.dev';
 
 const bodyParser = require('body-parser');
 
-const votingAppRouter = express.Router();
-const timersAppRouter = express.Router();
-const mainAppRouter = express.Router();
-
 const app = express();
 const port = 3000;
 const compiler = webpack(config);
@@ -40,7 +36,7 @@ app.use((req, res, next) => {
   });
 
 app.use("/votingApp", require('./routes/votingAppRoutes'));
-app.use("/listApp", require('./routes/listAppRoutes'));
+app.use("/hashApp", require('./routes/hashAppRoutes'));
 app.use("/basicRoutingApp", require('./routes/basicRoutingAppRoutes'));
 app.use("/", require('./routes/mainAppRoutes'));
 

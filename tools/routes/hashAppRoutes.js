@@ -13,10 +13,10 @@ router.route('/')
         console.log("environment is " + process.env['NODE_ENV']);
 
         (process.env['NODE_ENV'] == 'development') ?
-            pageName = path.join(__dirname + '/../../src/listApp.html') :
-            pageName = path.join(__dirname + '/../../dist/listApp.html');
+            pageName = path.join(__dirname + '/../../src/hashApp.html') :
+            pageName = path.join(__dirname + '/../../dist/hashApp.html');
 
-		console.log("entered /listapp route. ");
+		console.log("entered /hashapp route. ");
 		res.sendFile(pageName);
 	});
 

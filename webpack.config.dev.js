@@ -9,7 +9,7 @@ export default {
 	entry: {
 		mainapp: './mainapp/index.js',
 		votingapp: './votingapp/index.js',
-        listapp: './listapp/index.js',
+        hashapp: './hashapp/index.js',
         basicroutingapp: './basicrouting/index.js',
     },
 	target: 'web',

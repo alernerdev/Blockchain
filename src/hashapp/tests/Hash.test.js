@@ -1,40 +1,37 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import List from '../js/List';
+import { TextArea, Input } from 'semantic-ui-react';
+
+import Hash from '../js/Hash';
 
 /* expect works, but eslint is complaining */
 /* eslint-disable no-undef */
 
-describe('ListApp', () => {
+describe('HashApp', () => {
 	let wrapper;
 
 	beforeEach(() =>
 	{
 		wrapper = shallow(
-			<List />
+			<Hash />
 		);
 	});
 
-	it('should have the `th` "Items"', () => {
-		expect(wrapper.contains(<th>Items</th>)).toBe(true);
-	});
-
-	it('should have a button element', () => {
+	it('should have a TextArea element', () => {
 		expect(wrapper.containsMatchingElement(
-			<button>Add item</button>
+			<TextArea></TextArea>
 		)).toBe(true);
 	});
 
-	it('button should be disabled', () => {
-		const button = wrapper.find('button').first();
-		expect(button.props().disabled).toBe(true);
-	});
-
-	it('should have a input element', () => {
+	it('should have a Input element', () => {
 		expect(wrapper.containsMatchingElement(
-			<input />
+			<Input></Input>
 		)).toBe(true);
 	});
+	it('input should be disabled', () => {
+		const input = wrapper.find('Input').first();
+		expect(input.props().disabled).toBe(true);
+	});/*
 
 	describe('user populates input', () => {
 		const item = "Vancouver";
@@ -100,6 +97,6 @@ describe('ListApp', () => {
 				expect(button.props().disabled).toBe(true);
 			});
 		});
-	});
+	});*/
 });
 

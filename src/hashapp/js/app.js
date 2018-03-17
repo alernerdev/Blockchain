@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './List';
+import Hash from './Hash';
 
 ReactDOM.render(
-  <List />,
+  <Hash />,
   document.getElementById('content')
 );
 
