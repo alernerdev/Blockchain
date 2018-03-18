@@ -16,8 +16,8 @@ export default class Header extends React.Component {
 
     let choices = [];
     choices.push({name: 'main', value: 'Main', className: 'blue item', href: '/'});
-    choices.push({name: 'voting', value: 'Voting', className: 'red item', href: '/votingapp'});
-    choices.push({name: 'hash', value: 'SHA256', className: 'green item', href: '/hashapp'});
+	choices.push({name: 'hash', value: 'SHA256', className: 'green item', href: '/hashapp'});
+    choices.push({name: 'block', value: 'Block', className: 'red item', href: '/blockapp'});
     choices.push({name: 'basicrouting', value: 'Basic Routing', className: 'teal item', href: '/basicroutingapp'});
 
     /* go over the array of menus, and which ever one is active now, mark it as such */

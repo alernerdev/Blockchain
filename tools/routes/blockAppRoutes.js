@@ -13,8 +13,8 @@ router.route('/')
         console.log("environment is " + process.env['NODE_ENV']);
 
         (process.env['NODE_ENV'] == 'development') ?
-            pageName = path.join(__dirname + '/../../src/votingApp.html') :
-            pageName = path.join(__dirname + '/../../dist/votingApp.html');
+            pageName = path.join(__dirname + '/../../src/blockApp.html') :
+            pageName = path.join(__dirname + '/../../dist/blockApp.html');
 
 		console.log("entered /votingapp route. ");
 		res.sendFile(pageName);

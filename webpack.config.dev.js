@@ -8,7 +8,7 @@ export default {
 	context: path.resolve(__dirname, "src"),
 	entry: {
 		mainapp: './mainapp/index.js',
-		votingapp: './votingapp/index.js',
+		blockapp: './blockapp/index.js',
         hashapp: './hashapp/index.js',
         basicroutingapp: './basicrouting/index.js',
     },

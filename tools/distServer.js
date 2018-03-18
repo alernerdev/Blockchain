@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 	next();
   });
 
-app.use("/votingApp", require('./routes/votingAppRoutes'));
+app.use("/blockApp", require('./routes/blockAppRoutes'));
 app.use("/hashapp", require('./routes/hashAppRoutes'));
 app.use("/basicRoutingApp", require('./routes/basicRoutingAppRoutes'));
 app.use("/", require('./routes/mainAppRoutes'));

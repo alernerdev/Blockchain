@@ -34,7 +34,7 @@ export default {
 	context: path.resolve(__dirname, "src"),
 	entry: {
         mainapp: './mainapp/index.js',
-        votingapp: './votingapp/index.js',
+        blockapp: './blockapp/index.js',
 		hashapp: './hashapp/index.js',
 		basicroutingapp: './basicrouting/index.js',
         vendor: ['react', 'react-dom', 'react-router-dom', 'semantic-ui-react']
@@ -57,10 +57,10 @@ export default {
 		// Generate HTML file that contains references to generated bundles.
 		//See here for how this works: 	https://github.com/jantimon/html-webpack-plugin/issues/218
 
-		// votingapp
+		// blockapp
 		new HtmlWebpackPlugin({
-			template: 'templates/votingapp.ejs',
-			filename: 'votingapp.html',
+			template: 'templates/blockapp.ejs',
+			filename: 'blockapp.html',
 			chunks: ['vendor', 'votingapp', 'common'],
 			favicon: 'favicon.ico',
 			minify: minifyOptions,
