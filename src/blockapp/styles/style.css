@@ -1,4 +1,7 @@
-/* Styles go here */
+/* turn off row borders in the grid */
+.ui.table tr td { border-top: 0px !important; }
+/* turn off row borders around labels */
+.ui.basic.label { border: 0px !important; }
 
 #content {
   margin-bottom: 4em;
