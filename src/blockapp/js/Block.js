@@ -6,9 +6,8 @@ export default class Block extends React.Component {
 
 	state = {
 		data: '',
-		block: '1',
-		nonce: '',
-		encoded: ''
+		block: 1,
+		nonce: 72608,
 	};
 
 	constructor() {
@@ -30,23 +29,19 @@ export default class Block extends React.Component {
 
 	doHash = () => {
 		let message = this.makeMessage();
-		let hash = CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
-		this.setState({	encoded: hash});
+		return CryptoJS.SHA256(message).toString(CryptoJS.enc.Hex);
 	}
 
 	onDataChange = (e) => {
 		this.setState({data: e.target.value});
-		this.doHash();
 	};
 
 	onBlockNumberChange = (e) => {
 		this.setState({block: e.target.value});
-		this.doHash();
 	};
 
 	onNonceChange = (e) => {
 		this.setState({nonce: e.target.value});
-		this.doHash();
 	};
 
 	// the total message consists of user data, but also block number and nonce
@@ -61,6 +56,7 @@ export default class Block extends React.Component {
 
 	render() {
 		const style = {width : "100%"};
+		let encodedBlock = this.doHash();
 
 		return(
 			<Container>
@@ -68,12 +64,13 @@ export default class Block extends React.Component {
 					<Table.Body>
 					<Table.Row verticalAlign='top'>
 							<Table.Cell textAlign='right'>
-								<Label basic>Block</Label>
+								<Label basic>Block:</Label>
 							</Table.Cell>
 
 							<Table.Cell>
-								<Input fluid
+								<Input fluid label='#'
 									type='text'
+									value={this.state.block}
 									onChange={this.onBlockNumberChange}
 								/>
 							</Table.Cell>
@@ -87,6 +84,7 @@ export default class Block extends React.Component {
 							<Table.Cell>
 								<Input fluid
 									type='text'
+									value={this.state.nonce}
 									onChange={this.onNonceChange}
 								/>
 							</Table.Cell>
@@ -112,11 +110,7 @@ export default class Block extends React.Component {
 								<Label basic>Hash:</Label>
 							</Table.Cell>
 							<Table.Cell>
-								<Input fluid
-									type='text'
-									value={this.state.encoded}
-									readOnly
-								/>
+								<div>{encodedBlock}</div>
 							</Table.Cell>
 						</Table.Row>
 						<Table.Row verticalAlign='top'>
